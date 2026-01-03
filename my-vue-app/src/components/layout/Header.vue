@@ -1,14 +1,95 @@
 <script setup>
 
+  const props = defineProps({
+    text:{
+      type: String,
+      default: "Каталог",
+    }
+  })
 </script>
 
 <template>
-  <div>
+
+  <header class="header">
+
+    <div class="header__PageName">
+      {{ text }}
+    </div>
+
+    <nav class="header__Nav">
+      <router-link class="Nav__Link" to="/">Каталог</router-link>
+      <router-link class="Nav__Link" to="/cart">Корзина</router-link>
+    </nav>
     
-  </div>
+  </header>
   
 </template>
 
 <style scoped>
+.header{
+  width: 1416px;
+  height: 120px;
 
+  background-color: white;
+
+  border-radius: 0 0 20px 20px;
+
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  padding-left: 30px;
+}
+.header__PageName{
+  min-width: 200px;
+  height: 80px;
+
+  background-color: rgba(0, 91, 255, 1);
+  color: white;
+    
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    
+  font-size: 30px;
+  font-weight: 400;
+  font-style: Regular;
+}
+.header__Nav{
+  width: 300px;
+  height: 80px;
+  margin-left: 950px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+}
+.Nav__Link{
+  text-decoration: none;
+
+  min-width: 95px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0, 26, 52, 0.4);
+
+  border-radius: 14px;
+
+  padding: 7px;
+
+  color: white;
+
+  transition: all 0.6s ease;
+}
+.Nav__Link:hover{
+  background-color: rgba(0, 91, 255, 1);
+  transition: all 0.6s ease;
+}
 </style>
